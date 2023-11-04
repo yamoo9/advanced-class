@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "dev": "browser-sync docs --watch --open 'ui'"
+  },
   "devDependencies": {
     "browser-sync": "2.29.3"
   }
