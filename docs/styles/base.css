@@ -1,3 +1,9 @@
+@import './normalilze.css';
+
+body {
+  font: 1rem/1.5 "Suit Variable", "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+}
+
 img {
   vertical-align: middle;
 }
