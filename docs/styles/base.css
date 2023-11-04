@@ -1,0 +1,11 @@
+img {
+  vertical-align: middle;
+}
+
+button {
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
