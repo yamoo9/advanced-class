@@ -1,3 +1,20 @@
 .Button {
-  
+  --font-size: 1rem;
+  --font-weight: 500;
+  --background-color: transparent;
+  --border-color: var(--blue-500);
+  --border-thick: 3px;
+  --radius: 8px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius);
+  border: var(--border-thick) solid var(--border-color, #3695F6);
+  background: var(--background-color, #fff);
+  padding: 0.5em 0.75em;
+  color: var(--zinc-950, #121212);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: 1;
 }

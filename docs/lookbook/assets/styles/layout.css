@@ -19,6 +19,8 @@ body {
 
   margin: 60px 0 0;
   background: var(--white);
+
+  font: 1rem/1.5 "SUIT Variable", Verdana, Arial, sans-serif;
 }
 
 .GlobalNavigation {
