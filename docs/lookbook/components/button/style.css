@@ -1,7 +1,7 @@
 .Button {
   --font-size: 1rem;
   --font-weight: 500;
-  --background-color: transparent;
+  --background-color: var(--white);
   --color: var(--zinc-950, #121212);
   --outline-color: var(--blue-500);
   --outline-thick: 3px;
