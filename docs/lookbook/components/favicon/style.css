@@ -1,0 +1,26 @@
+.Favicon {
+  --gap: 8px;
+  --icon-size: 24px;
+  --font-size: 12px;
+  --line-adjust: -2px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap);
+  color: var(--gray-900, #2c2c2c);
+  
+  .dark & {
+    color: var(--white, #fff);
+  }
+  
+  > img {
+    block-size: var(--icon-size);
+    inline-size: var(--icon-size);
+  }
+
+  > figcaption {
+    translate: 0 var(--line-adjust, 0);
+    font-size: var(--font-size);
+  }
+
+}

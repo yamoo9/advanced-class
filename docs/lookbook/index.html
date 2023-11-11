@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>컴포넌트 룩북(Component Lookbook)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="컴포넌트 룩북을 통해 컴포넌트를 검색하고 코드를 복사하여 사용할 수 있습니다." />
+    <link rel="icon" href="/lookbook/assets/images/lookbook.svg" media="(prefers-color-scheme: light)" />
+    <link rel="icon" href="/lookbook/assets/images/lookbook-dark.svg" media="(prefers-color-scheme: dark)" />
+    <link rel="stylesheet" href="/lookbook/assets/styles/main.css" />
+    <script type="module" src="/lookbook/assets/scripts/search.js"></script>
+    <script defer src="/lookbook/assets/scripts/navigation.js"></script>
+  </head>
+
+  <body>
+
+    <form class="SearchComponentBar">
+      <label for="searchInput" class="sr-only">컴포넌트 검색</label>
+      <input id="searchInput" name="searchInput" type="search" placeholder="컴포넌트 이름" />
+    </form>
+
+    <nav class="ComponentList" style="--a-size: 120px">
+      <h2 class="sr-only">컴포넌트 리스트</h2>
+      <ul>
+        <li><a href="./components/favicon">파비콘</a></li>
+      </ul>
+    </nav>
+
+  </body>
+
+</html>
