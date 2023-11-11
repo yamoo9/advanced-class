@@ -19,7 +19,7 @@
       <h1 lang="en">Button Component</h1>
       <article>
         <header>
-          <h2>버튼</h2>
+          <h2>버튼 (호버, 엑티브, 포커스는 직접 확인 가능)</h2>
           <button
             type="button"
             class="ClipboardButton"
@@ -29,6 +29,48 @@
         <div class="ComponentWrapper">
           <button type="button" class="Button">
             레이블
+          </button>
+        </div>
+      </article>
+
+      <article>
+        <header>
+          <h2>버튼 (비활성 상태)</h2>
+          <button
+            type="button"
+            class="ClipboardButton"
+            aria-label="코드 복사"
+            title="코드 복사"></button>
+        </header>
+        <div class="ComponentWrapper">
+          <button type="button" class="Button" disabled>
+            레이블
+          </button>
+        </div>
+      </article>
+
+      <article>
+        <header>
+          <h2>버튼 (사용자 정의 디자인)</h2>
+          <button
+            type="button"
+            class="ClipboardButton"
+            aria-label="코드 복사"
+            title="코드 복사"></button>
+        </header>
+        <div class="ComponentWrapper">
+          <!-- props, properties -->
+          <button type="button" class="Button" style="
+            --font-size: 1.2rem; 
+            --font-weight: 900;
+            --outline-color: var(--blue-300);
+            --radius: 100px;
+            --background-color: var(--blue-500);
+            --color: var(--blue-100);
+            --padding-inline: calc(var(--gap) * 6);
+            --padding-block: calc(var(--gap) * 1.5);
+          ">
+            저장
           </button>
         </div>
       </article>
