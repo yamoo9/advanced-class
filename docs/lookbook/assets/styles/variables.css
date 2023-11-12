@@ -1,8 +1,30 @@
 :root {
-
+  /* 룩북 시스템 */
   --gap: 4px;
+  --side-width: 220px;
 
-  /* Color styles */
+  --white: #fff;
+  --black: #000;
+  
+  --metal-50: #f6f5f5;
+  --metal-100: #eeeeee;
+  --metal-200: #c4c4c4;
+  --metal-300: #afafaf;
+  --metal-400: #939393;
+  --metal-500: #7e7e7e;
+  --metal-600: #616161;
+  --metal-700: #494949;
+  --metal-800: #3a3a3a;
+  --metal-900: #2c2c2c;
+  --metal-950: #101010;
+
+  --warn: #3d3927;
+  
+  --a-size: 6.25rem; /* 100px */
+
+
+  /* Figma 디자인 토큰 */
+
   --white: #FFFFFF;
   --black: #000000;
   --zinc-50: #FAFAFA;
@@ -28,7 +50,6 @@
   --blue-900: #1E468A;
   --blue-950: #172C54;
 
-  /* Effect styles */
   --shadow--100: 0px 2px 4px rgba(0, 0, 0, 0.3);
-
+  
 }

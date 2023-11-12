@@ -1,10 +1,13 @@
 .Button {
   --font-size: 1rem;
   --font-weight: 500;
-  --background-color: var(--white);
+  --background-color: var(--white, #fff);
   --color: var(--zinc-950, #121212);
-  --outline-color: var(--blue-500);
+  --active-color: var(--zinc-50, #FAFAFA);
+  --outline-color: var(--blue-500, #3695F6);
   --outline-thick: 3px;
+  --disable-background: var(--zinc-50, #FAFAFA);
+  --disable-color: var(--zinc-500, #8F8F8F);
   --radius: 8px;
   --padding-inline: 0.75em;
   --padding-block: 0.5em;
@@ -15,7 +18,7 @@
   align-items: center;
   border-radius: var(--radius);
   border: 0;
-  background: var(--background-color, #fff);
+  background: var(--background-color);
   padding: var(--padding-block) var(--padding-inline);
   color: var(--color);
   font-size: var(--font-size);
@@ -28,7 +31,7 @@
 
   &:active {
     opacity: 1;
-    background: var(--zinc-50, #FAFAFA);
+    background: var(--acive-color);
   }
 
   &:focus {
@@ -38,12 +41,12 @@
 
   &:focus-visible {
     opacity: 1;
-    outline: var(--outline-thick) solid var(--outline-color, #3695F6);
+    outline: var(--outline-thick) solid var(--outline-color);
   }
 
   &:disabled {
     opacity: 1;
-    background: var(--zinc-50, #FAFAFA);
-    color: var(--zinc-500, #8F8F8F);
+    background: var(--disable-background);
+    color: var(--disable-color);
   }
 }

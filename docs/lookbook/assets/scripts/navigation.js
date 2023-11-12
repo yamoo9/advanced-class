@@ -1,4 +1,4 @@
-const {body} = document;
+const { body } = document;
 
 body.style.setProperty('display', 'none');
 

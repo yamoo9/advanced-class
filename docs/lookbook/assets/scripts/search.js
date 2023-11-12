@@ -12,6 +12,10 @@ main();
 function main() {
   makeComponentListData();
   renderComponentList();
+  bindEvents();
+}
+
+function bindEvents() {
   searchInput?.addEventListener('input', debounce(filterSearchedComponentList));
   document.addEventListener('keyup', handleBindShortcut);
 }

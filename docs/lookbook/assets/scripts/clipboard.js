@@ -1,4 +1,6 @@
 const BUTTON = '.ClipboardButton';
+const COPIED_CLASSNAME = 'copied';
+const TIMEOUT = 1000;
 
 const clipboardButtons = Array.from(document.querySelectorAll(BUTTON));
 
@@ -6,18 +8,9 @@ clipboardButtons.forEach((button) => {
   const header = button.parentElement;
   const componentWrapper = header?.nextElementSibling;
 
-  componentWrapper?.addEventListener(
-    'click',
-    handleCopyClipboard.bind(null, componentWrapper)
-  );
-  button.addEventListener(
-    'click',
-    handleCopyClipboard.bind(null, componentWrapper)
-  );
+  componentWrapper?.addEventListener('click', handleCopyClipboard.bind(null, componentWrapper));
+  button.addEventListener('click', handleCopyClipboard.bind(null, componentWrapper));
 });
-
-const COPIED_CLASSNAME = 'copied';
-const TIMEOUT = 1000;
 
 async function handleCopyClipboard(target) {
   target.classList.add(COPIED_CLASSNAME);
