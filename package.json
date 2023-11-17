@@ -7,7 +7,7 @@
     "styles": "postcss",
     "bundle_styles": "styles",
     "pages": "pages",
-    "has_preview": false,
+    "has_preview": true,
     "preview": "preview",
     "svg": {
       "input": "src/assets/svg",

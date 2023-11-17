@@ -65,6 +65,14 @@ pnpm build
 pnpm preview
 ```
 
+## 클린업
+
+자동 생성된 docs, preview 폴더를 삭제합니다.
+
+```sh
+pnpm cleanup
+```
+
 ## SVG 스프라이트 생성
 
 [package.json](./package.json) 파일을 열어 SVG 스프라이트 이미지 자동 생성 구성을 설정할 수 있습니다.

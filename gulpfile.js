@@ -44,8 +44,16 @@ function replaceBasePathHTML() {
   return src([
     `${INPUT}/*.html`,
     `${INPUT}/${PAGES}/**/*.html`,
+    `!${INPUT}/${PAGES}/template.html`,
     `!${INPUT}/lookbook/**/*.html`,
   ])
+    .pipe(
+      replace(
+        '<link rel="stylesheet" href="/lookbook/assets/styles/main.css" />',
+        ''
+      )
+    )
+    .pipe(replace('<link rel="stylesheet" href="/lookbook/index.css" />', ''))
     .pipe(
       replace('<script type="module" src="/lookbook/index.js"></script>', '')
     )
