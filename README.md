@@ -9,7 +9,21 @@
 - CSS Post processing (with [PostCSS](https://postcss.org))
 - Build process (with [Gulp](https://gulpjs.com))
 
-### 개발 명령
+## 다운로드 및 패키지 설치
+
+[degit](https://github.com/Rich-Harris/degit#readme) 명령을 사용해 학습 저장소 자료를 다운로드 받습니다.
+
+```sh
+degit yamoo9/advanced-class advanced-class
+```
+
+다운로드 받은 폴더로 이동한 다음, 개발 종속성 패키지를 설치합니다.
+
+```sh
+cd advanced-class && pnpm install
+```
+
+## 개발 명령
 
 개발 서버를 구동합니다.
 
@@ -17,7 +31,7 @@
 pnpm dev
 ```
 
-### 빌드 구성
+## 빌드 구성
 
 빌드 프로세스를 거쳐 결과가 생성됩니다.
 
@@ -43,7 +57,7 @@ pnpm build
 }
 ```
 
-### GitHub Pages 프리뷰
+## GitHub Pages 프리뷰
 
 빌드 명령 실행 후, GitHub 배포 전에 프리뷰 할 수 있습니다.
 
@@ -51,7 +65,7 @@ pnpm build
 pnpm preview
 ```
 
-### SVG 스프라이트 생성
+## SVG 스프라이트 생성
 
 [package.json](./package.json) 파일을 열어 SVG 스프라이트 이미지 자동 생성 구성을 설정할 수 있습니다.
 
