@@ -13,9 +13,13 @@ body.insertAdjacentHTML(
 );
 
 if (location.pathname.includes('lookbook')) {
-  document.querySelector('.GlobalNavigation a[href="/lookbook"]')?.classList.add('active');
+  document
+    .querySelector('.GlobalNavigation a[href="/lookbook"]')
+    ?.classList.add('active');
 } else {
-  document.querySelector('.GlobalNavigation a[href="/"]')?.classList.add('active');
+  document
+    .querySelector('.GlobalNavigation a[href="/"]')
+    ?.classList.add('active');
 }
 
 body.style.removeProperty('display');

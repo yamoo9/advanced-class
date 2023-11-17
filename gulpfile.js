@@ -4,10 +4,12 @@ const replace = require('gulp-replace');
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const concatCss = require('gulp-concat-css');
-const { src, dest, series } = require('gulp');
+const { src, dest, series, watch } = require('gulp');
 const { config } = require('./package.json');
 
-/* 구성(Configuration) -------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* 구성(Configuration)                                                          */
+/* -------------------------------------------------------------------------- */
 
 const {
   base: BASE,
@@ -19,16 +21,24 @@ const {
   pages: PAGES,
   has_preview: HAS_PREVIEW,
   preview: PREVIEW,
+  svg: SVG,
 } = config;
 
-/* 테스크(Tasks) --------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* 테스크(Tasks)                                                                 */
+/* -------------------------------------------------------------------------- */
+
+/* 에셋(Assets) 테스크 ----------------------------------------------------------- */
 
 function copyAssets() {
   return src([`${INPUT}/${ASSETS}/**/*`])
     .pipe(imagemin())
     .pipe(dest(`${OUTPUT}/${ASSETS}`))
-    .pipe(gulpif(HAS_PREVIEW, dest(`${PREVIEW}/${BASE}/${ASSETS}`)));
+    .pipe(gulpif(HAS_PREVIEW, dest(`${PREVIEW}/${BASE}/${ASSETS}`)))
+    .on('end', () => console.log('🍟 에셋 복제 및 최적화 완료!'));
 }
+
+/* HTML, CSS 테스크 ------------------------------------------------------------ */
 
 function replaceBasePathHTML() {
   return src([
@@ -55,14 +65,41 @@ function replaceBasePathHTML() {
             : `${PREVIEW}/${BASE}`
         )
       )
-    );
+    )
+    .on('end', () => console.log('🍟 HTML 빌드 완료!'));
 }
 
 function replaceBasePathCSS() {
   return src([`${INPUT}/${BUNDLE_STYLES}/*.css`])
     .pipe(replace(/url\((\"|\')?\/(?!\/)/g, `url(/${BASE}/`))
     .pipe(dest(`${OUTPUT}/${BUNDLE_STYLES}`))
-    .pipe(gulpif(HAS_PREVIEW, dest(`${PREVIEW}/${BASE}/${BUNDLE_STYLES}`)));
+    .pipe(gulpif(HAS_PREVIEW, dest(`${PREVIEW}/${BASE}/${BUNDLE_STYLES}`)))
+    .on('end', () => console.log('🍟 CSS 빌드 완료!'));
 }
 
 exports.build = series(copyAssets, replaceBasePathHTML, replaceBasePathCSS);
+
+/* SVG 스프라이트 이미지 생성 테스크 ----------------------------------------------------- */
+
+async function makeSvgSprites() {
+  const { stacksvg } = await import('gulp-stacksvg');
+
+  return src([`${SVG.input}/**/*.svg`])
+    .pipe(
+      stacksvg({
+        output: SVG.filename,
+        separator: '_',
+        spacer: '-',
+      })
+    )
+    .pipe(dest(SVG.output))
+    .on('end', () => console.log('🎸 SVG 스프라이트 이미지 생성'));
+}
+
+exports.svg = makeSvgSprites;
+
+async function watchSvg() {
+  watch([`${SVG.input}/**/*.svg`], series(makeSvgSprites));
+}
+
+exports.watchSvg = watchSvg;

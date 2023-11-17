@@ -9,9 +9,17 @@
 - CSS Post processing (with [PostCSS](https://postcss.org))
 - Build process (with [Gulp](https://gulpjs.com))
 
+### 개발 명령
+
+개발 서버를 구동합니다.
+
+```sh
+pnpm dev
+```
+
 ### 빌드 구성
 
-빌드 명령을 실행하면 결과가 출력됩니다.
+빌드 프로세스를 거쳐 결과가 생성됩니다.
 
 ```sh
 pnpm build
@@ -35,10 +43,38 @@ pnpm build
 }
 ```
 
-### 프리뷰
+### GitHub Pages 프리뷰
 
 빌드 명령 실행 후, GitHub 배포 전에 프리뷰 할 수 있습니다.
 
 ```sh
 pnpm preview
+```
+
+### SVG 스프라이트 생성
+
+[package.json](./package.json) 파일을 열어 SVG 스프라이트 이미지 자동 생성 구성을 설정할 수 있습니다.
+
+```json
+{
+  "config": {
+    "svg": {
+      "input": "SVG 폴더 이름",
+      "output": "SVG 스프라이트 폴더 이름",
+      "filename": "SVG 스프라이트 이미지 이름"
+    }
+  }
+}
+```
+
+SVG 스프라이트 이미지를 1회 생성합니다.
+
+```sh 
+pnpm svg
+```
+
+SVG 폴더의 변경 상황을 감지해 변경될 때마다 SVG 스프라이트 이미지를 N회 생성합니다.
+
+```sh 
+pnpm watch:svg
 ```

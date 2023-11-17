@@ -7,8 +7,13 @@
     "styles": "postcss",
     "bundle_styles": "styles",
     "pages": "pages",
-    "has_preview": true,
-    "preview": "preview"
+    "has_preview": false,
+    "preview": "preview",
+    "svg": {
+      "input": "src/assets/svg",
+      "output": "src/assets/sprites",
+      "filename": "stack"
+    }
   },
   "browserslist": [
     "last 2 versions"
@@ -19,7 +24,9 @@
     "build": "run-s cleanup build:gulp",
     "build:gulp": "gulp build",
     "preview": "browser-sync preview --startPath $npm_package_config_base --port 3001 --no-notify --no-open --no-ui",
-    "cleanup": "rimraf -rf docs preview src/$npm_package_config_bundle_styles"
+    "cleanup": "rimraf -rf docs preview src/$npm_package_config_bundle_styles",
+    "svg": "gulp svg",
+    "watch:svg": "gulp watchSvg"
   },
   "devDependencies": {
     "@types/gulp": "4.0.17",
@@ -32,6 +39,8 @@
     "gulp-if": "3.0.0",
     "gulp-imagemin": "7.1.0",
     "gulp-replace": "1.1.4",
+    "gulp-stacksvg": "3.0.0",
+    "gulp-watch": "5.0.1",
     "npm-run-all": "4.1.5",
     "rimraf": "5.0.5"
   }
