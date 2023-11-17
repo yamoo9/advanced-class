@@ -1,8 +1,38 @@
 {
+  "config": {
+    "base": "advanced-class",
+    "input": "src",
+    "output": "docs",
+    "assets": "assets",
+    "styles": "postcss",
+    "bundle_styles": "styles",
+    "pages": "pages",
+    "has_preview": true,
+    "preview": "preview"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
   "scripts": {
-    "dev": "browser-sync docs --watch"
+    "dev": "run-p watch:*",
+    "watch:serve": "browser-sync src --port 3000 --watch --no-notify --no-open",
+    "build": "run-s cleanup build:gulp",
+    "build:gulp": "gulp build",
+    "preview": "browser-sync preview --startPath $npm_package_config_base --port 3001 --no-notify --no-open --no-ui",
+    "cleanup": "rimraf -rf docs preview src/$npm_package_config_bundle_styles"
   },
   "devDependencies": {
-    "browser-sync": "2.29.3"
+    "@types/gulp": "4.0.17",
+    "@types/node": "20.9.1",
+    "browser-sync": "2.29.3",
+    "gulp": "4.0.2",
+    "gulp-cli": "2.3.0",
+    "gulp-concat-css": "3.1.0",
+    "gulp-htmlmin": "5.0.1",
+    "gulp-if": "3.0.0",
+    "gulp-imagemin": "7.1.0",
+    "gulp-replace": "1.1.4",
+    "npm-run-all": "4.1.5",
+    "rimraf": "5.0.5"
   }
 }
