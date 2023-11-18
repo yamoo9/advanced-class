@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "dev": "run-p watch:*",
-    "watch:serve": "browser-sync $npm_package_config_base --port 3000 --watch --no-notify --no-open",
+    "watch:serve": "browser-sync $npm_package_config_input --port 3000 --watch --no-notify --no-open",
     "build": "run-s cleanup build:gulp",
     "build:gulp": "gulp build",
     "preview": "browser-sync preview --startPath $npm_package_config_base --port 3001 --no-notify --no-open --no-ui",
