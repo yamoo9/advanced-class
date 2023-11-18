@@ -10,59 +10,41 @@
     <link rel="icon" href="/lookbook/assets/images/lookbook-dark.svg" media="(prefers-color-scheme: dark)" />
     <link rel="stylesheet" href="/lookbook/assets/styles/main.css" />
     <link rel="stylesheet" href="./style.css" />
-    <script type="module" src="/lookbook/assets/scripts/clipboard.js"></script>
-    <script type="module" src="/lookbook/assets/scripts/navigation.js"></script>
+    <script type="module" src="/lookbook/index.js"></script>
   </head>
 
   <body>
-    <section class="Prose">
-      <h1 lang="en">Button Component</h1>
-      <article>
-        <header>
-          <h2>버튼 (호버, 엑티브, 포커스는 직접 확인 가능)</h2>
-          <button type="button" class="ClipboardButton" aria-label="코드 복사" title="코드 복사"></button>
-        </header>
-        <div class="ComponentWrapper dark">
-          <button type="button" class="Button">
-            레이블
-          </button>
-        </div>
-      </article>
+    
+    <y-prose headline="버튼 (Button)">
 
-      <article>
-        <header>
-          <h2>버튼 (비활성 상태)</h2>
-          <button type="button" class="ClipboardButton" aria-label="코드 복사" title="코드 복사"></button>
-        </header>
-        <div class="ComponentWrapper dark">
-          <button type="button" class="Button" disabled>
-            레이블
-          </button>
-        </div>
-      </article>
+      <y-story label="버튼 (호버, 엑티브, 포커스는 직접 확인 가능)" dark>
+        <button type="button" class="Button">
+          레이블
+        </button>
+      </y-story>
 
-      <article>
-        <header>
-          <h2>버튼 (사용자 정의 디자인)</h2>
-          <button type="button" class="ClipboardButton" aria-label="코드 복사" title="코드 복사"></button>
-        </header>
-        <div class="ComponentWrapper dark">
-          <button type="button" class="Button" style="
-            --font-size: 1.2rem; 
-            --font-weight: 900;
-            --outline-color: var(--blue-300);
-            --radius: 100px;
-            --background-color: var(--blue-500);
-            --color: var(--blue-100);
-            --padding-inline: calc(var(--gap) * 6);
-            --padding-block: calc(var(--gap) * 1.5);
-          ">
-            저장
-          </button>
-        </div>
-      </article>
+      <y-story label="버튼 (비활성 상태)" dark>
+        <button type="button" class="Button" disabled>
+          레이블
+        </button>
+      </y-story>
+      
+      <y-story label="버튼 (사용자 정의 디자인)" dark>
+        <button type="button" class="Button" style="
+          --font-size: 1.2rem; 
+          --font-weight: 900;
+          --outline-color: var(--blue-300);
+          --radius: 100px;
+          --background-color: var(--blue-500);
+          --color: var(--blue-100);
+          --padding-inline: calc(var(--gap) * 6);
+          --padding-block: calc(var(--gap) * 1.5);
+        ">
+          저장
+        </button>
+      </y-story>
 
-    </section>
+    </y-prose>
 
   </body>
 

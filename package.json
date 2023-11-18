@@ -20,11 +20,11 @@
   ],
   "scripts": {
     "dev": "run-p watch:*",
-    "watch:serve": "browser-sync src --port 3000 --watch --no-notify --no-open",
+    "watch:serve": "browser-sync $npm_package_config_base --port 3000 --watch --no-notify --no-open",
     "build": "run-s cleanup build:gulp",
     "build:gulp": "gulp build",
     "preview": "browser-sync preview --startPath $npm_package_config_base --port 3001 --no-notify --no-open --no-ui",
-    "cleanup": "rimraf -rf docs preview src/$npm_package_config_bundle_styles",
+    "cleanup": "rimraf -rf docs preview $npm_package_config_base/$npm_package_config_bundle_styles",
     "svg": "gulp svg",
     "watch:svg": "gulp watchSvg"
   },
