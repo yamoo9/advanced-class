@@ -47,16 +47,8 @@ function replaceBasePathHTML() {
     `!${INPUT}/${PAGES}/template.html`,
     `!${INPUT}/lookbook/**/*.html`,
   ])
-    .pipe(
-      replace(
-        '<link rel="stylesheet" href="/lookbook/assets/styles/main.css" />',
-        ''
-      )
-    )
-    .pipe(replace('<link rel="stylesheet" href="/lookbook/index.css" />', ''))
-    .pipe(
-      replace('<script type="module" src="/lookbook/index.js"></script>', '')
-    )
+    .pipe(replace('<link rel="stylesheet" href="/lookbook/assets/styles/main.css" />', ''))
+    .pipe(replace('<script type="module" src="/lookbook/index.js"></script>', ''))
     .pipe(replace(/=("|')\/(?!\/)/g, `="/${BASE}/`))
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(
